@@ -235,13 +235,13 @@ def game_in():
 
 
         # 将三个部分组合成一个窗口显示
-        combined_img = np.hstack((part1, part2, part3))
-        cv.imshow('Combined Parts', combined_img)
+        #combined_img = np.hstack((part1, part2, part3))
+        #cv.imshow('Combined Parts', combined_img)
 
-        if cv.waitKey(1) == ord('q'):
-            break
+        #if cv.waitKey(1) == ord('q'):
+            #break
 
-    cv.destroyAllWindows()
+    #cv.destroyAllWindows()
 
 if __name__ == "__main__":
     leveling_loop()
