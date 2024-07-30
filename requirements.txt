@@ -1,0 +1,7 @@
+mouse~=0.7.1
+opencv-python~=4.10.0.84
+numpy~=2.0.1
+pyautogui~=0.9.54
+requests~=2.32.3
+pydirectinput~=1.0.4
+urllib3~=2.2.2
