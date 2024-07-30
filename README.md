@@ -11,8 +11,12 @@ Python >= 3.10
 `pip install requirements.txt`
 
 ## 使用方法🚀
-启动英雄联盟，选择无尽狂潮模式，使用贝蕾亚作为英雄（**建议选择故事模式地图，请不要在匹配模式种使用此脚本**）
-更适合那些已经取得了一定无尽狂潮升级的召唤师
+1. 将分辨率调整为1920X1080
+2. 启动英雄联盟，选择无尽狂潮模式，
+3. 使用贝蕾亚作为英雄
+4. 关闭指针瞄准
+5. 选择地图（1星可以通关，15分钟1000金币。2星无法通关，5分钟400金币）（**请不要在匹配模式种使用此脚本**）
+6. 更适合那些已经取得了一定无尽狂潮升级的召唤师
 
 
 ## 免责声明😓
@@ -23,8 +27,9 @@ Python >= 3.10
 
 
 
+# league-of-legends-Swarm-bot
 ## Project Overview 🚀
-This is an automation script for the Endless Rave mode in League of Legends. The script utilizes Python, LCU API, and OpenCV technologies to automatically loop the game and use template matching to identify and select required weapons and upgrade options, aimed at helping players save time and increase game efficiency.
+This is an automation script for the Endless Rave mode in League of Legends. The script uses Python, LCU API, and OpenCV technologies to automatically loop the game and use template matching to identify and select required weapons and upgrade options, aimed at helping players save time and increase game efficiency.
 
 ## Features ✨
 1. 🔄 Automatically loops the League of Legends Endless Rave mode
@@ -36,9 +41,12 @@ Python >= 3.10
 `pip install -r requirements.txt`
 
 ## Usage 🚀
-Start League of Legends, select Endless Rave mode, and use Bel’Veth as the champion (**It is recommended to choose the Story Mode map; please do not use this script in Matchmaking mode**)
-Best suited for summoners who have already achieved a certain level of upgrade in Endless Rave mode.
+1. Set the resolution to 1920x1080.
+2. Start League of Legends and select Endless Rave mode.
+3. Use Bel’Veth as the champion.
+4. Disable pointer aiming.
+5. Choose the map (1-star can be completed within 15 minutes for 1000 gold, while 2-star cannot be completed but yields 400 gold in 5 minutes). (**Please do not use this script in Matchmaking mode**).
+6. This script is best suited for summoners who have already achieved a certain level of upgrade in Endless Rave mode.
 
 ## Disclaimer 😓
 This script is not authorized by Riot Games or Tencent. Using this script may violate League of Legends' terms of service and game rules. We are not responsible for any account bans or other issues resulting from the use of this script. By using this script, you acknowledge and accept all associated risks.
-
