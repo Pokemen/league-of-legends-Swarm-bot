@@ -5,7 +5,6 @@ import numpy as np
 import os
 import pyautogui
 import requests
-import keyword
 import utils
 import pydirectinput
 
