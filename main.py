@@ -171,7 +171,8 @@ def game_in():
     # 加载模板图片
     token, port = utils.get_client_info()
     lcu = utils.LCU(token, port)
-    haystack_dir = '/picture'  # 替换为您的图像文件夹路径
+    path = os.getcwd()
+    haystack_dir = path+'/picture'  # 替换为您的图像文件夹路径
     # 初始化图片库
     haystack_images = load_images_from_folder(haystack_dir)
 
