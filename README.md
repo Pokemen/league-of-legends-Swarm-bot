@@ -50,7 +50,7 @@ This is an automation script for the Endless Rave mode in League of Legends. The
 1. Run the script in administrator mode.
 2. Set the resolution to 1920x1080.
 3. set the client to **Never** close.
-4. Start League of Legends and select Endless Rave mode.
+4. Start League of Legends and select Swarm mode.
 5. Use Briar as the champion.
 6. Disable pointer aiming.
 7. Choose the map (1-star can be completed within 15 minutes for 1000 gold, while 2-star cannot be completed but yields 400 gold in 5 minutes). (**Please do not use this script in Matchmaking mode**).
