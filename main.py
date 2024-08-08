@@ -136,7 +136,6 @@ def find_best_match_value(best_match1, best_match2, best_match3):
         return best_match3, "best_match3"
 
 def leveling_loop():
-    """Loop that runs the correct function based on the phase of the League Client, continuously starts games"""
     # 连接到 League Client Update (LCU) 服务
     token, port = utils.get_client_info()
     lcu = utils.LCU(token, port)
@@ -151,7 +150,7 @@ def leveling_loop():
                 matchmaking_count += 1  # 增加计数器
                 lcu.start_matchmaking()
 
-                # 如果计数器达到了 20，则执行 lcu.exit_lobby()，然后重置计数器
+                # 如果计数器达到了 10，则执行 lcu.exit_lobby()，然后重置计数器
                 if matchmaking_count >= 10:
                     lcu.exit_lobby()
             case 'ReadyCheck':
@@ -166,13 +165,12 @@ def leveling_loop():
         time.sleep(1)
 
 
-
 def game_in():
     # 加载模板图片
     token, port = utils.get_client_info()
     lcu = utils.LCU(token, port)
     path = os.getcwd()
-    haystack_dir = path+'/picture'  # 替换为您的图像文件夹路径
+    haystack_dir = os.path.join(path, 'picture')  # 替换为您的图像文件夹路径
     # 初始化图片库
     haystack_images = load_images_from_folder(haystack_dir)
 
@@ -212,25 +210,34 @@ def game_in():
             mouse.click()
 
         # 获取游戏数据
-        game_data = get_game_data()
-        if game_data is None:
-            print("游戏数据无法获取")
-            break  # 跳过当前循环的其余部分
-        else:
+        try:
+            game_data = get_game_data()
+            if game_data is None:
+                print("游戏数据无法获取")
+                continue  # 跳过当前循环的其余部分并继续下一次循环
+
             maxHealth = game_data['activePlayer']['championStats']['maxHealth']
             currentHealth = game_data['activePlayer']['championStats']['currentHealth']
             L_Health = int(maxHealth * 0.4)  # 健康阈值设定为40%
+
             # 判断是否执行技能按键
             current_time = time.time()
             if current_time - last_health_check_time >= health_check_interval:
                 pydirectinput.press('e')
                 last_health_check_time = current_time
-            if L_Health >= currentHealth:
+            if currentHealth <= L_Health:  # 注意条件改为 <=
                 pydirectinput.press('r')
 
+            print(f"maxHealth: {maxHealth}")
+            print(f"currentHealth: {currentHealth}")
 
-            print(f"maxHealth: {game_data['activePlayer']['championStats']['maxHealth']}")
-            print(f"currentHealth: {game_data['activePlayer']['championStats']['currentHealth']}")
+        except KeyError as e:
+            print(f"获取游戏数据时发生错误: {e}")
+            continue  # 跳过当前循环的其余部分并继续下一次循环
+
+        except Exception as e:
+            print(f"发生未知错误: {e}")
+            continue  # 跳过当前循环的其余部分并继续下一次循环
 
 
 
@@ -238,7 +245,7 @@ def game_in():
         #combined_img = np.hstack((part1, part2, part3))
         #cv.imshow('Combined Parts', combined_img)
 
-        #if cv.waitKey(1) == ord('q'):
+        #if cv.waitKey(1) == ord('q'):ee
             #break
 
     #cv.destroyAllWindows()
