@@ -227,6 +227,7 @@ def game_in():
                 last_health_check_time = current_time
             if currentHealth <= L_Health:  # 注意条件改为 <=
                 pydirectinput.press('r')
+                last_health_check_time = current_time
 
             print(f"maxHealth: {maxHealth}")
             print(f"currentHealth: {currentHealth}")
